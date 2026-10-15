@@ -1,5 +1,5 @@
 ---
 title: "SolucionEjercicio"
+author: "Nicolás Camacho"
 output: html_document
 ---
-
