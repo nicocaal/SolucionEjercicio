@@ -65,3 +65,23 @@ str(Animals2.df)
 ```
 
 Observamos que efectivamente las instancias de mammals están en Animals2. A partir de sus dimensiones, vemos que se han añadido 3 instancias más.
+
+## c. Nombres de filas y columnas
+
+```{r}
+head(rownames(mammals.df))
+```
+
+```{r}
+colnames(mammals.df)
+```
+
+```{r}
+head(rownames(Animals2.df))
+```
+
+```{r}
+colnames(mammals.df)
+```
+
+Se comprueba a partir de las columnas que las variables contenidas son las mismas: peso corporal y peso cerebral.
