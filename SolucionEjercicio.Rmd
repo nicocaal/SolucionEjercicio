@@ -64,7 +64,7 @@ str(mammals.df)
 str(Animals2.df)
 ```
 
-Observamos que efectivamente las instancias de mammals están en Animals2. A partir de sus dimensiones, vemos que se han añadido 3 instancias más.
+Observamos que efectivamente las instancias de mammals están en Animals2. A partir de sus dimensiones, vemos que se han añadido 3 instancias más (65 frente a 62).
 
 ## c. Nombres de filas y columnas
 
@@ -104,4 +104,24 @@ diffAnimals <- Animals2.df[diffAnimals.names, ]
 dim(diffAnimals)
 ```
 
-Hay 7 animales que no se encuentran en ambos conjuntos. 3 de ellos son dinosaurios, por lo que es comprensible que no se hallen en mammals.
+```{r}
+diffAnimals2.names <- setdiff(rownames(mammals.df), rownames(Animals2.df))
+diffAnimals2 <- mammals.df[diffAnimals2.names, ]
+dim(diffAnimals2)
+```
+
+Hay 7 animales de Animals2 que no se encuentran en mammals y, a su vez, 4 de mammals que no se encuentran en Animals2.
+
+## f. Animales fuera de la intersección
+
+```{r}
+diffAnimals
+```
+
+```{r}
+diffAnimals2
+```
+
+Vemos que los 4 animales que están en mammals pero no en Animals2 no están realmente fuera de la intersección, sino que no coinciden con las instancias de Animals2 por cambios ortográficos o de terminología. Por ejemplo, *arctic* en lugar de *artic* o *patas monkey* en lugar de *potar monkey*. Por lo demás, los valores de sus variables son coincidentes.
+
+Por tanto, esto solo nos deja con 3 animales que realmente no están dentro de mammals, los cuales corresponden a dinosaurios, por lo que es coherente que no estén contenidos en el dataframe de mamíferos.
