@@ -90,7 +90,18 @@ Se comprueba a partir de las columnas que las variables contenidas son las misma
 
 ```{r}
 ?intersect
-commonAnimals <- intersect(rownames(mammals.df), rownames(Animals2.df))
+commonAnimals.names <- intersect(rownames(mammals.df), rownames(Animals2.df))
+commonAnimals <- Animals2.df[commonAnimals.names, ]
 ```
 
-Según la ayuda de la función intersect, esta trabaja con vectores. Por tanto, calculamos la intersección simplemente entre los nombres de las instancias de los dataframes. De este modo conocemos el nombre de los animales presentes en ambos.
+Según la ayuda de la función intersect, esta trabaja con vectores. Por tanto, calculamos la intersección simplemente entre los nombres de las instancias de los dataframes. De este modo conocemos el nombre de los animales presentes en ambos y obtenemos el dataframe correspondiente a la intersección.
+
+## e. Diferencia de conjuntos
+
+```{r}
+diffAnimals.names <- setdiff(rownames(Animals2.df), rownames(mammals.df))
+diffAnimals <- Animals2.df[diffAnimals.names, ]
+dim(diffAnimals)
+```
+
+Hay 7 animales que no se encuentran en ambos conjuntos. 3 de ellos son dinosaurios, por lo que es comprensible que no se hallen en mammals.
