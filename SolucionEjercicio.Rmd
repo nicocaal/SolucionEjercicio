@@ -17,3 +17,51 @@ library(robustbase)
 mammals.df <- get('mammals')
 Animals2.df <- get('Animals2')
 ```
+
+## a. Ver características
+
+```{r}
+help(package = 'MASS', topic = mammals)
+```
+
+```{r}
+help(package = 'robustbase', topic = Animals2)
+```
+
+Según la información sobre Animals2, este dataframe incluye a mammals.
+
+## b. Primera visualización
+
+```{r}
+dim(mammals.df)
+```
+
+```{r}
+dim(Animals2.df)
+```
+
+```{r}
+head(mammals.df)
+```
+
+```{r}
+head(Animals2.df)
+```
+
+```{r}
+tail(mammals.df)
+```
+
+```{r}
+tail(Animals2.df)
+```
+
+```{r}
+str(mammals.df)
+```
+
+```{r}
+str(Animals2.df)
+```
+
+Observamos que efectivamente las instancias de mammals están en Animals2. A partir de sus dimensiones, vemos que se han añadido 3 instancias más.
