@@ -4,7 +4,7 @@ author: "Nicolás Camacho"
 output: html_document
 ---
 
-## Importación de DataSets
+## Importación de DataFrames
 
 ```{r}
 install.packages('MASS')
@@ -85,3 +85,12 @@ colnames(mammals.df)
 ```
 
 Se comprueba a partir de las columnas que las variables contenidas son las mismas: peso corporal y peso cerebral.
+
+## d. Intersección de los conjuntos
+
+```{r}
+?intersect
+commonAnimals <- intersect(rownames(mammals.df), rownames(Animals2.df))
+```
+
+Según la ayuda de la función intersect, esta trabaja con vectores. Por tanto, calculamos la intersección simplemente entre los nombres de las instancias de los dataframes. De este modo conocemos el nombre de los animales presentes en ambos.
