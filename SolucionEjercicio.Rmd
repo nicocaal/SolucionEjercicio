@@ -3,3 +3,17 @@ title: "SolucionEjercicio"
 author: "Nicolás Camacho"
 output: html_document
 ---
+
+## Importación de DataSets
+
+```{r}
+install.packages('MASS')
+library(MASS)
+install.packages('robustbase')
+library(robustbase)
+```
+
+```{r}
+mammals.df <- get('mammals')
+Animals2.df <- get('Animals2')
+```
